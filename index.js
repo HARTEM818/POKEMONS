@@ -22,8 +22,9 @@ inputForSearchPokemons.addEventListener("input", async () => {
   try{
     const data = await getPokemonInfo(inputForSearchPokemons.value)
     console.log(data);
-    
-    const name = document.createElement("p")
+    const NoPokemon = document.querySelector(".search + p");
+    NoPokemon.style.display = "none"
+    const name = document.createElement("p");
     name.innerText = data.name;
     
 
@@ -68,7 +69,8 @@ inputForSearchPokemons.addEventListener("input", async () => {
         })
     })
   } catch(error){
-    console.error("такого помемона нема!!!")
+    const NoPokemon = document.querySelector(".search + p");
+    if (NoPokemon) NoPokemon.style.display = "inline";
   }
    
 })

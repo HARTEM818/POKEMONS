@@ -3,19 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
-#app-form{
-    max-width: 600px;
+.container{
+    max-width: 1000px;
     margin: 0 auto;
+    margin-top: 100px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
+
 .search{
     padding: 10px ;
     border-radius: 15px;
     border: 1px solid slategrey;
-    background-color: aquamarine;
 
+
+}
+.search + p{
+    position: absolute;
+    left: 200px;
+    display: none;
 }
 .info-container{
     display: none;
@@ -29,9 +36,5 @@
 .best__pokemons{
     color: aliceblue;
     background-color: gray;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 500px;
 
 }
