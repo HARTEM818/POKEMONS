@@ -19,10 +19,10 @@ const bestPokemons = document.querySelector(".best__pokemons");
 
 
 inputForSearchPokemons.addEventListener("input", async () => {
+  try{
     const data = await getPokemonInfo(inputForSearchPokemons.value)
     console.log(data);
-
-
+    
     const name = document.createElement("p")
     name.innerText = data.name;
     
@@ -67,4 +67,8 @@ inputForSearchPokemons.addEventListener("input", async () => {
           deleteBtn.remove()
         })
     })
+  } catch(error){
+    console.error("такого помемона нема!!!")
+  }
+   
 })
