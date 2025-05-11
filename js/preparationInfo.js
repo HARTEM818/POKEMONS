@@ -5,7 +5,7 @@ import { getPokemonInfo } from "./getPokemon.js";
 export async function preparationInfo() {
   const data = await getPokemonInfo(refs.inputForSearchPokemons.value);
 
-  const name = document.createElement("p");
+  let name = document.createElement("p");
   name.innerText = data.name;
 
   const type = document.createElement("p");
@@ -19,6 +19,8 @@ export async function preparationInfo() {
     ability.innerHTML += ` ${elem.stat.name}`;
   });
 
-  const arr = [name, type, mass, ability];
+  let arr = [name, type, mass, ability];
+  console.log(isPokemon);
+  
   return arr;
 }
