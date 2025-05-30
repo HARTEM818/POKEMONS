@@ -20,7 +20,7 @@ export async function preparationInfo() {
   });
 
   let arr = [name, type, mass, ability];
-  console.log(isPokemon);
+
   
   return arr;
 }
