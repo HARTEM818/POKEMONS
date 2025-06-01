@@ -10,18 +10,14 @@ export async function addToBest() {
     p.innerHTML = data.name;
     localStorage.setItem("best", data.name);
 
-
     refs.bestPokemons.appendChild(p);
     refs.bestPokemons.appendChild(deleteBtn);
 
-console.log(location);
-
     deleteBtn.addEventListener("click", () => {
-      p.remove();
-      deleteBtn.remove();
-       location.reload()
-      
+      p.style.display = "none";
+      deleteBtn.style.display = "none";
+      refs.addBestBtn.style.display = "block";
     });
-    refs.addBestBtn.remove()
+    refs.addBestBtn.style.display = "none";
   });
 }
