@@ -5,14 +5,19 @@ import { getPokemonInfo } from "./getPokemon.js";
 export async function addToBest() {
   const data = await getPokemonInfo(refs.inputForSearchPokemons.value);
 
+
+  refs.addBestBtn.style.display = "block";
+
   refs.addBestBtn.addEventListener("click", () => {
-    const favorites = JSON.parse(localStorage.getItem("favoritePokemons")) || [];
+    let favorites = JSON.parse(localStorage.getItem("favoritePokemons")) || [];
 
-    favorites.push(data.name);
-    localStorage.setItem("favoritePokemons", JSON.stringify(favorites));
+    if (!favorites.includes(data.name)) {
+      favorites.push(data.name);
+      localStorage.setItem("favoritePokemons", JSON.stringify(favorites));
 
-    renderFavorite(data.name);
-    refs.addBestBtn.style.display = "none";
+      renderFavorite(data.name);
+      refs.addBestBtn.style.display = "none";
+    }
   });
 }
 
